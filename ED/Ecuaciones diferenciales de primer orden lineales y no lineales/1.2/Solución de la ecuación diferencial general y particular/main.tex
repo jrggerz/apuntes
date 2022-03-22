@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{tabto}
+\usepackage{biblatex} 
+\addbibresource{ed.bib} %Import the bibliography file
+ \geometry{
+ letterpaper,
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=30mm
+ }
+ 
+\title{ Solución de la ecuación diferencial: general y particular. Definción de soluciones}
+\author{Jorge Ruiz López}
+\affil{Facultad de Ingeniería UNAM}
+\date{March 2022}
+
+\begin{document}
+
+\maketitle
+\section{Solución de una ecuación diferencial:}
+\begin{description}
+\item[Definición 1.1:]\textbf{Solución}\cite{carmona} de una ecuación diferencial es una función que no contiene derivadas y que satisface a dicha ecuación; es decir, al sustituir la función y sus derivadas en la ecuación diferencial resulta una identidad.
+\item[Definición 1.2:]\textbf{Solución general} de una ecuación diferencial es la función
+que contiene una o más constantes arbitrarias (obtenidas de las sucesivas integraciones).\\
+\textbf{Ejemplo:}
+La función $x+y^2 = c$ es la \emph{solución general} de la ecuación diferencial:
+\begin{center} $\frac{dy}{dx} = -\frac{1}{2y}$ \end{center}
+Porque derivándola implícitamente tenemos: $1+2y\frac{dy}{dx} = 0$, o expresado en otra forma: $2yy' = -1$.
+Sustituyendo y y y' obtenemos una identidad: 
+\begin{center}${2\sqrt{c-x}} {(-\frac{1}{2\sqrt{c-x}})} = -1$ $\blacksquare  -1 = -1$;\\
+donde $y=\sqrt{c-x}$\end{center}
+\textbf{Ejemplo 2:} La función $y=3x^2+c_1x+c_2$ es \emph{solución general} de la ecuación diferencial $y''= 6$, porque \begin{center}$y'=6x +c_1$\\ y $y'' = 6$ $\blacksquare 6=6$\end{center}
+\item[Definición 1.3:]\textbf{Solución particular} de una ecuación diferencial es la función cuyas constantes arbitrarias toman un valor específico.\\
+\textbf{Ejemplo:} La función $y = e^{-x}+8$ es \emph{solución particular} de la ecuación diferencial 
+$y'+e^x=0$, porque derivando la solución y sustituyéndola en la ecuación dada, obtenemos:
+\begin{center}
+$y'=-e^{-x}$\\$-e^{-x}+e^{-x}=0$ $\blacksquare 0 = 0$
+\end{center}
+\end{description}
+
+\printbibliography
+
+\end{document}
