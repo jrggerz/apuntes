@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{tabto}
+\usepackage{biblatex} 
+\addbibresource{ed.bib} %Import the bibliography file
+\geometry{
+ letterpaper,
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=30mm
+ }
+\title{Problema de valor inicial.}
+\author{Jorge Ruiz López}
+\affil{Facultad de Ingeniería UNAM}
+\date{Marzo 2022}
+\begin{document}
+\maketitle
+\section{Problema de valor inicial.}
+\begin{description}
+\item[Definición 1.1:]\cite{carmona} \emph{Problema con valor inicial} es la ecuación diferencial acompañada de condiciones iniciales.\\
+\item[Ejemplo]
+Resolver la ecuación diferencial:
+\begin{center}$y'-4xy = 0$\end{center}
+Para la condición inicial: $y = \frac{1}{5}$ cuando $x = 0$, o bien, brevemente:
+\begin{center}$y(0)=\frac{1}{5} $\end{center}
+La ecuación puede escribirse como:
+\begin{center}$dy=4xy\cdot dx$,  o, $\frac{dy}{y} = 4x\cdot dx$\end{center}
+Integrando ambos lados de la igualdad tenemos:\\
+\begin{center}$ln(y) = 2x^2+c$\\$y=ce^{2x^{2}}$ \end{center}
+Sustituyendo los valores del punto $(0, \frac{1}{5})$, tenemos que: $\frac{1}{5} = ce^0 \rightarrow c=\frac{1}{5}$\\
+Entonces la solución particular es:
+\begin{center}$y=\frac{1}{5}e^{2x^2}$\end{center}
+\item[Ejemplo 2:]
+Resolver la siguiente ecuación diferencial:
+\begin{center}$y''= x$, para $y(-2) = 4$\\, $y'(0)=1$\end{center}
+Integrando ambos lados de la ecuación tenemos:
+\begin{center}$y'=\frac{x^2}{2}+c_1$\end{center}
+Volviendo a integrar:
+\begin{center}$y=\frac{x^3}{6}+c_1x+c_2$, es solución general\end{center}
+Aplicando las condiciones iniciales dadas:
+\begin{center}para $y':$ \tab $1=0+c_1 \rightarrow c_1 =1$\end{center}
+\begin{center}para $y:$ \tab $4=\frac{-8}{6}-2(1)+c_2$\\$c_2 = \frac{22}{3}$\\$\blacksquare y= \frac{x^3}{6}+x+\frac{22}{3}$ es solución particular\end{center}
+Comprobación: derivando la solución particular y sustituyéndola en la ecuación, debe satisfacerla:
+\begin{center}$y'= \frac{x^2}{2}+ 1$\\$y''=x$\end{center}
+
+\end{description}
+\section{Observación:}Se necesita igual número de condiciones iniciales que el del orden de la ecuación diferencial.
+\printbibliography
+\end{document}
