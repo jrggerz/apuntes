@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabto}
+\usepackage{biblatex} 
+\addbibresource{ed.bib} %Import the bibliography file
+\geometry{
+ letterpaper,
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=30mm
+ }
+\title{Ecuaciones diferenciales de variables separables.}
+\author{Jorge Ruiz López}
+\affil{Facultad de Ingeniería UNAM}
+\date{Marzo 2022}
+\begin{document}
+\maketitle
+\section{Ecuaciones diferenciales de variables separables.}
+\begin{description}
+\item[Definición 1.1:]Una ecuación diferencial  de primer orden de la forma:\\
+\begin{center}$\frac{dy}{dx} = g(x)h(y)$\end{center}
+Se dice que es \cite{zill}\textbf{\textit{separable}} o que tiene variables separables.\\\\
+Observe que al dividir entre la función $h(y)$, podemos escribir una ecuación separable $\frac{dy}{dx} = g(x)h(y)$ como:
+\begin{center}$p(y)\frac{dy}{dx}=g(x)$\end{center}\tab(2)\\\break
+donde, por conveniencia $p(y)$ representa a $\frac{1}{h(y)}$.\\
+Ahora si $y = f(x)$ representa una solución de la ecuación $(2)$, se tiene que 
+$p(f(x))f'(x) = g(x)$, y por tanto
+\begin{center}$\int (f(x))f'(x) = \int g(x) $\end{center}\tab(3)\\\break
+Pero $dy = f'(x)dx$, por lo que la ecuación $(3)$ es la misma que
+\begin{center}
+    $\int p(y) dy = \int g(x) dx$\\o\\$H(y) = G(x)+c$
+\end{center}\tab(4)\\\break
+donde $H(y) y G(x)$ son antiderivadas de $p(y) = \frac{1}{h(y)}$ y $g(x)$, respectivamente.
+\item[Método de solución:]La ecuación $(4)$ indica el procedimiento para resolver 
+ecuaciones separables. Al integrar ambos lados de p(y) dy = g(x) dx, se obtiene una familia uniparamétrica de soluciones, que usualmente se expresa de manera implícita.\\
+\textbf{Ejemplo:}\\Resuelva $(1 + x)dy - ydx = 0$
+\begin{center}
+    \textbf{Solución:}Dividiendo entre (1 + x)y, podemos escribir $\frac{dy}{y} = \frac{dx}{(1+x)}$, de donde tenemos que\\
+    $\int \frac{dy}{y}$ $=$ $\int \frac{dx}{(1+x)}$\\
+    $ln|y| = ln|1+x|+c_1$\\
+    $y=e^{ln|1+x|+c_1}$ $=$ $e^{ln|1+x|}\cdot e^{c_1}$\\
+    $=|1+x|e^{c_1}$\\
+    $=\pm e^{c_1}(1+x)$\\
+    Haciendo c igual a $e^{c_1}$ se obtiene \underline{ \textbf{$y=c\cdot (1+x)$}}\\
+\end{center}
+\end{description}
+\printbibliography
+\end{document}
+
