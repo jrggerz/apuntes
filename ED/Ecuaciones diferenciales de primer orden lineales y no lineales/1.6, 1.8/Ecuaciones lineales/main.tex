@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabto}
+\usepackage{biblatex} 
+\addbibresource{ed.bib} %Import the bibliography file
+\geometry{
+ letterpaper,
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=30mm
+ }
+
+\title{Ecuaciones lineales de primer orden, homogeneas}
+\author{Jorge Ruiz López}
+\affil{Facultad de Ingeniería UNAM}
+\date{Marzo 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Ecuación lineal de primer orden}
+\begin{description}
+\item[Definicion 1.1:]Una ecuación diferencial de primer orden de la forma
+\begin{center}
+    $a_1(x) \frac{dy}{dx} + a_0(x)y =  g(x)$
+\end{center}\tab (1)\\\break
+se dice que es una \cite{zill}\textit{ecuación lineal} en la variable dependiente y.
+\item[Ecuación homogénea]Se dice que la ecuación lineal $(1)$ es \textbf{homogénea} cuando $g(x) = 0$; si no es \textbf{no homogénea}
+\item[Forma Estándar]Al dividir ambos lados de la ecuación $(1)$ entre el primer coeficiente, $a_1(x)$, se obtiene una forma más útil, la forma estándar de una ecuación lineal:
+\begin{center}
+    $\frac{dy}{dx} + P(x)y = f(x)$
+\end{center}\tab (2)\\\\
+\item[La propiedad]La ecuación diferencial $(2)$ tiene la propiedad de que su solución es la suma de las dos soluciones, $y=y_c +y_p$,donde $y_c$ es una solución de la ecuación homogénea asociada.
+\begin{center}
+    $\frac{dy}{dx} + P(x)y = 0$
+\end{center}\tab (3)\\\\
+y $y_p$ es una solución particular de ecuación no homogénea $(2)$. Para ver esto, observe que
+\begin{center}
+    $\frac{d}{dx}[Y_c +Y_p] + P(x)[Y_c +Y_p]$ $=$  $[\frac{dY_c}{dx}+ P(x)Y_c]$ $+$ $[\frac{dY_p}{dx}+ P(x)Y_p]$ $=$ $f(c)$\\.\\
+    \textbf{Nota:} $[\frac{dY_c}{dx}+ P(x)Y_c] = 0$
+\end{center}
+Ahora, la ecuación $(3)$ es también separable. Por lo que podemos determinar $Y_c$ al escribir la ecuación $(3)$ en la forma
+\begin{center}
+    $\frac{dy}{y} + P(x)dx = 0$
+\end{center}
+e integramos. Despejando $y$, se obtiene $Y_c = ce^{- \int P(x)dx}$. Por conveniencia escribimos 
+$Y_c = cy_1(x)$, donde $y_1= e^{- \int P(x)dx}$. A continuación se utiliza el hecho de que $\frac{dy_1}{dx}+ P(x)y_1= 0$, para determinar $Y_p$
+\item[El procedimiento:]Ahora podemos definir una solución particular de la ecuación $(2)$, siguiendo un procedimiento llamado variación de parámetros. Aquí, la idea básica es encontrar una función, $u$ tal que $Y_p = u(x)y_1(x) = u(x)e^{- \int P(x)dx}$.Osea una solución de la ecuación (2).  En otras palabras, nuestra suposición para $Y_p$ es la misma que $Y_c =cy_1(x)$ excepto que $c$ se ha sustituido por el “parámetro variable” $u$. Sustituyendo $yp =uy_1$ en la ecuación (2) se obtiene
+\begin{center}
+    $u \frac{dy_1}{dx} + y \frac{du}{dx} + P(x)uy_1 = f(x)$ o $u[\frac{dy_1}{dx} + P(x)y_1] + y_1\frac{du}{dx} = f(x)$
+\end{center}.\\
+por tanto\tab $y_1\frac{du}{dx} = f(x)$\\\break
+Entonces separando las variables e integrando se obtiene:
+\begin{center}
+    $du = \frac{f(x)}{y_1(x)}dx$  y  $u = \int \frac{f(x)}{y_1(x)}dx$
+\end{center}
+Puesto que $y_1(x) =  e^{- \int P(x)dx}$, vemos que $\frac{1}{y_1(x)} =  e^{\int P(x)dx}$. Por tanto
+\begin{center}
+    $Y_p = uy_1 = (\int \frac{f(x)}{y_1(x)}dx) e^{- \int P(x)dx} =  e^{- \int P(x)dx} \int e^{\int P(x)dx}f(x) d(x)$\\.\\y\\$Y = Y_c + Y_p$\\$y =  ce^{- \int P(x)dx} + e^{- \int P(x)dx}\int e^{\int P(x)dx}f(x) d(x)$
+\end{center}\tab(4)\\
+Por tanto, si la ecuación $(2)$ tiene una solución, debe ser de la forma de la ecuación $(4)$. Recíprocamente, es un ejercicio de derivación directa comprobar que la ecuación $(4)$ es una familia uniparamétrica de soluciones de la ecuación $(2)$. Recuerde el término especial
+\begin{center}
+    $e^{\int P(x)dx}$
+\end{center}\tab(5)\\
+ya que se utiliza para resolver la ecuación (2) de una manera equivalente pero más fácil. Si la ecuación (4) se multiplica por (5),
+
+\begin{center}
+    $e^{\int P(x)dx}y = c + \int e^{\int P(x)dx}f(x)dx$
+\end{center}\tab(6)\\
+y después se deriva la ecuación (6),
+\begin{center}
+    $\frac{d}{dx}[e^{\int P(x)dx}y] = e^{\int P(x)dx}f(x)$
+\end{center}\tab(7)\\
+Se obtiene 
+\begin{center}
+    $ e^{\int P(x)dx}\frac{dy}{dx} + y P(x)  e^{\int P(x)dx} = e^{\int P(x)dx}f(x)dx$
+\end{center}\tab(8)\\
+Dividiendo el último resultado entre $e^{\int P(x)dx}$ se obtiene la ecuación (2)
+\item[Metodo de solución]:\\
+\begin{center}
+    \begin{enumerate}
+        \item Ponga la ecuación lineal de la forma $(1)$ en la forma estándar $(2)$.
+        \item Identifique de la identidad de la forma estándar $P(x)$ y después determine el factor integrante $e^{\int P(x)dx}$
+        \item Multiplique la forma estándar de la ecuación por el factor integrante. El lado izquierdo de la ecuación resultante es automáticamente la derivada del factor integrante y $y$
+        \begin{center}
+            $\frac{d}{dx}[e^{\int P(x)dx}y] = e^{\int P(x)dx}f(x)$
+        \end{center}
+        \item Integre ambos lados de esta última ecuación.
+    \end{enumerate}
+\end{center}
+\item[Ejemplo:] Resuelva $\frac{dy}{dx}-3y = 6$\\
+Factor Integrante: $e^{\int (-3)dx} =e^{-3x} $\\
+Multiplicando: $e^{-3x}\frac{dy}{dx} - e^{-3x}3y = e^{-3x}6$\\es igual a\\
+$\frac{d}{dx}[e^{-3x}y] = e^{-3x}6$\\
+Integrando ambos lados de la última ecuación se obtiene $e^{-3x}y = -2e^{-3x} + c$ o \underline{$y = -2 +ce^{3x}$}\\
+\textbf{Nota:}$y=Y_c +Y_p$
+\end{description}
+\printbibliography
+\end{document}
