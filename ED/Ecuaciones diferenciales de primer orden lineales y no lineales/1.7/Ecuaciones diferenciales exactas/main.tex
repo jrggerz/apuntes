@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabto}
+\usepackage{biblatex} 
+\addbibresource{ed.bib} %Import the bibliography file
+\geometry{
+ letterpaper,
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=30mm
+ }
+
+\title{Ecuaciones diferenciales exactas.}
+\author{Jorge Ruiz López}
+\affil{Facultad de Ingeniería UNAM}
+\date{Marzo 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Ecuaciones diferenciales exactas.}
+\begin{description}
+\item[Definición 1.1:]Una expresión diferencial $M(x, y) dx + N(x, y) dy$ es una \cite{zill}\textbf{\textit{ diferencial exacta}} en una región $R$ del plano $xy$ si ésta corresponde a la diferencial de alguna función $f (x, y)$ definida en $R$. Una ecuación diferencial de primer orden de la forma\begin{center}
+     $M(x, y) dx + N(x, y) dy = 0$
+\end{center}
+se dice que es una \textbf{ecuación exacta } si la expresión del lado izquierdo es una diferencial exacta.
+\item[Criterio para una diferencial exacta:]Sean $M(x, y)$ y $N(x, y)$ continuas y que tienen primeras derivadas parciales continuas en una región rectangular $R$ definida por a<x<b, c<y<d. Entonces una condición necesaria y sufi ciente para que $M(x, y) dx  N(x, y) dy$ sea una diferencial exacta es 
+\begin{center}
+    $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$
+\end{center}\tab$(1)$\\
+siendo\begin{center}
+    $M(x,y) = \frac{\partial f}{\partial x}$, $N(x,y) = \frac{\partial f}{\partial y}$
+\end{center}
+\item[Método de solución:]Dada una ecuación en la forma diferencial $M(x, y) dx + N(x, y) dy = 0$, determine si la igualdad de la ecuación $(1)$ es válida. Si es así, entonces existe una función $f$ para la que
+\begin{center}
+    $ \frac{\partial f}{\partial x} =M(x,y)$
+\end{center}
+Podemos determinar $f$ integrando $M(x, y)$ respecto a $x$ mientras $y$ se conserva constante
+\begin{center}
+    $f(x,y) = \int M(x,y) dx + g(y)$
+\end{center}\tab$(2)$\\
+donde la función arbitraria $g(y)$ es la “constante” de integración. Ahora derivando $(2)$ respecto a $y$ y suponiendo que $\frac{\partial f}{\partial y} = N(x, y)$:
+\begin{center}
+    $\frac{\partial f}{\partial y} =\frac{\partial }{\partial y} \int M(x,y) dx + g'(y) = N(x, y)$
+\end{center}
+Se obtiene
+\begin{center}
+     $g'(y) = N(x, y) - \frac{\partial }{\partial y} \int M(x,y) dx$
+\end{center}\tab$(3)$\\
+Por último, se integra la ecuación $(3)$ respecto a $y$ y se sustituye el resultado en la ecuación $(2)$. \\
+Pudimos iniciar  el procedimiento anterior con la suposición de que $ \frac{\partial f}{\partial y} = N(x,y) $. Después, integrando $N$ respecto a $y$ y derivando este resultado, encontraríamos las ecuaciones que, respectivamente, son análogas a las ecuaciones $(2)$ y $(3)$\\
+\begin{center}
+    $f(x,y) = \int N(x,y) dy + h(x)$\\y\\$h'(x) = M(x, y) - \frac{\partial }{\partial x} \int N(x,y) dy$ 
+\end{center}
+\item[Ejemplo:]
+Resuelva $2xy dx + (x^2 - 1) dy = 0$\\
+\textbf{Solución:}Con $M(x, y) = 2xy$ y $N(x, y) = x^2 - 1$ tenemos que\\
+\begin{center}
+    $\frac{\partial N}{\partial x}= 2x = \frac{\partial M}{\partial y}$
+\end{center}
+Existe una función $f(x, y)$ tal que
+\begin{center}
+    $\frac{\partial f}{\partial x} = 2xy$ y $\frac{\partial f}{\partial y} =  x^2 - 1$
+\end{center}
+Al integrar la primera de estas ecuaciones, se obtiene:
+\begin{center}
+    $f(x, y) = x^2y + g(y)$
+\end{center}
+Tomando la derivada parcial de la última expresión con respecto a $y$ y haciendo el resultado igual a $N(x, y)$ se obtiene
+\begin{center}
+    $\frac{\partial f}{\partial y} = x^2 + g'(y) = x^2 -1$
+\end{center}
+Se tiene que $g'(y) = -1$ y $g(y) = -y$. Por tanto $f(x, y) = x^2y - y$, así la solución de la ecuación en la forma implícita es 
+$x^2y - y = c.$
+La forma explícita de la solución se ve fácilmente como $y = \frac{c}{1-x^1}$ y está definida en cualquier intervalo que no contenga ni a $x = 1$ ni a $x = -1$. 
+\end{description}
+\printbibliography
+\end{document}
