@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabto}
+\usepackage{biblatex} 
+\addbibresource{ed.bib} %Import the bibliography file
+\geometry{
+ letterpaper,
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=30mm
+ }
+\title{Funciones linealmente independientes y wronskiano.}
+\author{Jorge Ruiz López}
+\affil{Facultad de Ingeniería UNAM}
+\date{Abril 2022}
+\begin{document}
+\maketitle
+\section{Dependencia e independencia lineal:}
+\begin{description}
+\item[Definición 1.1:]Se dice que un conjunto de funciones $f_1(x), f_2(x),..., f_n(x)$ es \textbf{linealmente dependiente} en un intervalo $I$ si existen constantes $c_1, c_2,...,c_n$ no todas cero, tales que
+\begin{center}
+    $c_1f_1(x)+ c_2f_2(x)+...+c_nf_n(x) = 0$
+\end{center}
+para toda $x$ en el intervalo. Si el conjunto de funciones no es linealmente dependiente en el intervalo, se dice que es linealmente independiente.
+\end{description}
+\section{Wronskiano:}
+\begin{description}
+\item[Definición 1.2:]Suponga que cada una de las funciones $f_1(x), f_2(x), . . . , f_n(x)$ tiene al menos $n-1$ derivadas. El determinante
+\begin{center}
+\begin{equation}W(f_1, f_2, ...,f_n)= \begin{vmatrix}
+f_1 & f_2 & ... & f_n\\
+f_1' & f_2' & ... & f_n'\\
+\vdots & \vdots & & \vdots\\
+f_1^{n-1} & f_2^{n-1} & ... & f_n^{n-1} 
+\end{vmatrix}
+\end{equation}
+\end{center}
+\item[Criterio para soluciones linealmente independientes]Sean $y_l, y_2, . . . , y_n$ $n$ soluciones de la ecuación diferencial lineal homogénea de n-ésimo orden en el intervalo $I$. El conjunto de soluciones es linealmente independiente en $I$ si y sólo si $W(y_l, y_2, . . . ,y_n)\neq 0$   para toda $x$ en el intervalo.
+\end{description}
+\end{document}
