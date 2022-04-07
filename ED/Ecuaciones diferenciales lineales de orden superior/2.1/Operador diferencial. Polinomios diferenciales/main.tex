@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+\usepackage{outlines}
+\usepackage{authblk}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabto}
+\usepackage{biblatex} 
+\addbibresource{ed.bib} %Import the bibliography file
+\geometry{
+ letterpaper,
+ left=25mm,
+ top=25mm,
+ bottom=25mm,
+ right=30mm
+ }
+
+\title{Operador diferencial. Polinomios diferenciales}
+\author{Jorge Ruiz López}
+\affil{Facultad de Ingeniería UNAM}
+\date{Abril 2022}
+
+\begin{document}
+
+\maketitle
+\section{Ecuación lineal de orden n}
+Una \cite{zill}\textit{ecuación diferencial} lineal de n-ésimo orden de la forma
+\begin{center}
+    $a_n(x)\frac{d^ny}{dx^n} + a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}}+...+a_1(x)\frac{dy}{dx}+a_0(x)y = 0$
+\end{center}
+se dice que es homogénea, mientras que una ecuación
+\begin{center}
+     $a_n(x)\frac{d^ny}{dx^n} + a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}}+...+a_1(x)\frac{dy}{dx}+a_0(x)y = g(x)$
+\end{center}
+con g(x) no igual a cero, se dice que es no homogénea.
+\section{Operador diferencial}En cálculo la derivación se denota con frecuencia con la letra $D$ mayúscula, es decir, $\frac{dy}{dx} =Dy$. El símbolo $D$ se llama operador diferencial porque convierte una función derivable en otra función. Por ejemplo, 
+$D(cos 4x)$ = $4 sen 4x$ y $D(5x^3 - 6x2
+) = 15x^2 - 12x$. Las derivadas de orden superior se expresan en términos de $D$ de manera natural
+\begin{center}
+    $\frac{d}{dx}(\frac{dy}{dx}) = \frac{d^2y}{dx^2} = D(Dy) = D^2$\\
+    y, en general\\
+    $\frac{d^ny}{d^nx} = D^n y$
+\end{center}
+donde y representa una función suficientemente derivable. Las expresiones polinomiales en las que interviene $D$, tales como $D + 3$, $D^2+ 3D - 4$ y $5x^3 D^3 - 6x^2 D^2 + 4xD +9 $, son también operadores diferenciales. En general, se define un \textbf{operador diferencial de n-ésimo orden} u \textbf{operador polinomial}  como:
+\begin{center}
+    $L = a_n(x)D^n + a_{n-1}xD^{n-1}+...+a_1(x)D + a_0(x)$\\(1)\break
+\end{center}
+Como una consecuencia de \textbf{dos propiedades} básicas de la derivada, $D(cf(x)) = cDf(x)$ $c$ es una constante y $D\{ f(x)+g(x)\} = Df(x) + Dg(x)$, el operador diferencial $L$ tiene una propiedad de linealidad; es decir, $L$ operando sobre una combinación lineal de dos 
+funciones derivables es lo mismo que la combinación lineal de $L$ operando en cada una de las funciones. Simbólicamente esto se expresa como
+\begin{center}
+    $L \{ \alpha f(x) + \beta g(x)\} = \alpha L(f(x)) + \beta L(g(x))$\\(2)\break
+\end{center}
+donde $\alpha$ y $\beta$  son constantes. Como resultado de $(2)$ se dice que el operador diferencial de n-ésimo orden es un    \textbf{operador lineal.}
+
+\section{Ecuaciones diferenciales}Cualquier ecuación diferencial lineal puede expresarse en términos de la notación $D$. Por ejemplo, la ecuación diferencial $y''+ 5y' 6y = 5x - 3$ se puede escribir como $D^2y + 5Dy + 6y = 5x – 3$ o $(D^2 + 5D + 6)y = 5x
+- 3$. Usando la ecuación (2), se pueden escribir las ecuaciones diferenciales lineales de n-énesimo orden (homogénea y no homogénea) en forma compacta como
+\begin{center}
+    $L(y) = 0 $ y $L(y) = g(x)$
+\end{center}
+respectivamente.
+\printbibliography
+\end{document}
